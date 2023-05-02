@@ -1,0 +1,27 @@
+#map {
+    width: 100%;
+    height: 60vh;
+}
+
+#filterForm {
+    padding: 0 1rem;
+}
+
+.social-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.social-links a:hover {
+    color: #666;
+}

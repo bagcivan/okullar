@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Harita</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12"></script>
+</head>
+
+<body>
+  <div id="social-links" class="social-links">
+    <a href="https://github.com/bagcivan" target="_blank" class="github-link">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com/home" target="_blank" class="twitter-link">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+  <div class="container-fluid">
+    <div class="row mt-4">
+      <div class="col">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <form id="filterForm" class="w-100 mx-auto">
+        <fieldset>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="il">İl:</label>
+                <select id="il" multiple class="form-control"></select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="ilce">İlçe:</label>
+                <select id="ilce" multiple class="form-control"></select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="kategori">Kategori:</label>
+                <select id="kategori" multiple class="form-control"></select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="hizmet">Hizmet:</label>
+                <select id="hizmet" multiple class="form-control"></select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button type="button" id="resetFilters" class="btn btn-primary">Filtreleri Temizle</button>
+        <div class="row mt-4">
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <h3>Favori Okullar</h3>
+            <ul id="favoriteSchools" class="list-group"></ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
