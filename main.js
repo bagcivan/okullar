@@ -61,14 +61,14 @@ function renderFavoriteSchools() {
 
         // Okul bilgilerini ekle
         const schoolInfo = `
-          <td>${index + 1}</td>
+          <td class="order-number">${index + 1}</td>
           <td>${school["Okul Adı"]}</td>
           <td>${school["İl"]}</td>
           <td>${school["İlçe"]}</td>
           <td>${school["Kategori"]}</td>
           <td>${school["Hizmet"]}</td>
           <td><a href="${school["Ana Sayfa"]}" target="_blank">${school["Ana Sayfa"]}</a></td>
-          <td><button class="btn btn-sm btn-danger">Sil</button></td>
+          <td class="no-drag"><button class="btn btn-sm btn-danger">Sil</button></td>
           `;
         tr.innerHTML = schoolInfo;
 
@@ -84,6 +84,14 @@ function renderFavoriteSchools() {
     });
 
     updateSortable();
+
+}
+
+function updateOrderNumbers() {
+    const orderNumbers = document.querySelectorAll(".order-number");
+    orderNumbers.forEach((orderNumber, index) => {
+        orderNumber.textContent = index + 1;
+    });
 }
 
 function updateSortable() {
@@ -91,6 +99,7 @@ function updateSortable() {
     const favoriteSchoolsTableBody = document.querySelector("#favoriteSchools tbody");
     const sortable = Sortable.create(favoriteSchoolsTableBody, {
         animation: 150,
+        filter: ".no-drag",
         onUpdate: function () {
             const newOrder = sortable.toArray().map((id) => {
                 const schoolStr = favoriteSchoolsTableBody.querySelector(`tr[data-id="${id}"]`).getAttribute("data-school");
@@ -99,8 +108,8 @@ function updateSortable() {
             });
             favoriteSchools.length = 0;
             favoriteSchools.push(...newOrder);
-            renderFavoriteSchools();
             saveFavoriteSchools();
+            updateOrderNumbers(); // Sıralama işlemi yapıldıktan sonra sıra numaralarını güncelle
         },
     });
 }
