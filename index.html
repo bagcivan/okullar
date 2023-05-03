@@ -3,29 +3,33 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Harita</title>
+  <title>Matematik Harita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-  <div id="social-links" class="social-links">
-    <a href="https://github.com/bagcivan" target="_blank" class="github-link">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://twitter.com/bagcivan/" target="_blank" class="twitter-link">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </div>
+  <header>
+    <h5>2023 Lise Matematik Sözleşmeli Öğretmenlik Okulları</h5>
+    <div id="social-links" class="social-links">
+      <a href="https://github.com/bagcivan" target="_blank" class="github-link">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/home" target="_blank" class="twitter-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </header>
   <div class="container-fluid">
     <div class="row mt-4">
       <div class="col">
@@ -65,12 +69,24 @@
         <button type="button" id="resetFilters" class="btn btn-primary">Filtreleri Temizle</button>
         <div class="row mt-4">
         </div>
-        <div class="row mt-4">
-          <div class="col-md-12">
-            <h3>Favori Okullar</h3>
-            <ul id="favoriteSchools" class="list-group"></ul>
-          </div>
-        </div>
+        <table id="favoriteSchools" class="table table-striped table-bordered">
+          <thead>
+            <td colspan="8" id="favoriteSchoolsTitle">Favori Okullar</td>
+            <tr>
+              <th>Sıra No</th>
+              <th>Okul Adı</th>
+              <th>İl</th>
+              <th>İlçe</th>
+              <th>Kategori</th>
+              <th>Hizmet</th>
+              <th>Ana Sayfa</th>
+              <th>Sil</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
       </form>
     </div>
   </div>
